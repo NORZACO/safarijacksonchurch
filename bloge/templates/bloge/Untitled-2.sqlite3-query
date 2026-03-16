@@ -1,0 +1,4 @@
+-- database: ../../../portfoliodatabase.sqlite3
+
+SELECT * FROM bloge_album
+ORDER BY `category` ASC;

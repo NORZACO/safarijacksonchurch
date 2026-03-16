@@ -1,0 +1,34 @@
+
+ {% extends 'bloge/partials/base.html' %}
+ {% block title %} Menu {% endblock %}
+ {% load static %}
+
+ {% block main_content %}
+
+ <!-- Why Us Section -->
+    <section id="why-us" class="why-us section">
+
+
+        <div class="container">
+
+          <div class="row gy-4">
+            <div class="col-lg-8 d-flex align-items-stretch">
+              <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+                {% for menu_data in menu_datas.all %}
+                <div class="col-xl-4">
+                  <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                    {{ menu_data.icon_class | safe  }}
+                    <h4>{{menu_data.title }} </h4>
+                    <p>{{ menu_data.description | safe  }} </p>
+                  </div>
+                </div><!-- End Icon Box -->
+                 {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- /Why Us Section -->
+
+ {% endblock main_content %}

@@ -1,0 +1,95 @@
+{% extends 'bloge/partials/base.html' %}
+{% block title %} Mmembers {% endblock %}
+{% load static %}
+
+{% block main_content %}
+
+    <!-- Chefs Section -->
+    <section id="chefs" class="chefs section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>chefs</h2>
+          <p><span>Our</span> <span class="description-title">Proffesional Chefs<br></span></p>
+        </div><!-- End Section Title -->
+  
+        <div class="container">
+  
+          <div class="row gy-4">
+            {% for member in members %}
+            <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+              <div class="team-member">
+                <div class="member-img">
+                  <img src="{{ member.image.url }}" class="img-fluid" alt="{{ member.name }}">
+                  <div class="social">
+                    {% if member.twitter %}
+                    <a href="{{ member.twitter }}"><i class="bi bi-twitter-x"></i></a>
+                    {% endif %}
+                    {% if member.facebook %}
+                    <a href="{{ member.facebook }}"><i class="bi bi-facebook"></i></a>
+                    {% endif %}
+                    {% if member.instagram %}
+                    <a href="{{ member.instagram }}"><i class="bi bi-instagram"></i></a>
+                    {% endif %}
+                    {% if member.linkedin %}
+                    <a href="{{ member.linkedin }}"><i class="bi bi-linkedin"></i></a>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>{{ member.name }}</h4>
+                  <span>{{ member.title }}</span>
+                  <p>{{ member.description }}</p>
+                </div>
+              </div>
+            </div><!-- End Chef Team Member -->
+            {% endfor %}
+            
+            <!-- End Chef Team Member -->
+  
+            {% comment %} <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+              <div class="team-member">
+                <div class="member-img">
+                  <img src="{% static 'bloge/assets/img/chefs/chefs-2.jpg' %}" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Sarah Jhonson</h4>
+                  <span>Patissier</span>
+                  <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
+                </div>
+              </div>
+            </div><!-- End Chef Team Member -->
+  
+            <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+              <div class="team-member">
+                <div class="member-img">
+                  <img src="{% static 'bloge/assets/img/chefs/chefs-3.jpg' %}" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>William Anderson</h4>
+                  <span>Cook</span>
+                  <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
+                </div>
+              </div>
+            </div><!-- End Chef Team Member -->
+   {% endcomment %}
+          </div>
+  
+        </div>
+  
+      </section><!-- /Chefs Section -->
+
+
+{% endblock main_content %}

@@ -1,0 +1,95 @@
+{% extends 'bloge/partials/base.html' %}
+
+{% load static %}
+
+{% block main_content %}
+
+<!-- INTRODUCTION -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">What Is the Good News?</h2>
+
+        <p class="lead text-muted col-md-8 mx-auto">
+            Science and discovery reveal fascinating truths about the universe.
+            From the structure of atoms to the movement of stars, understanding
+            nature brings clarity about our place in the cosmos.
+        </p>
+    </div>
+</section>
+
+<!-- TOPICS -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img
+                        src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                        class="card-img-top"
+                    />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">The Sun</h5>
+                        <p class="card-text text-muted">
+                            Our star powers life on Earth. Explore how nuclear
+                            fusion lights the solar system.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img
+                        src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                        class="card-img-top"
+                    />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">The Earth</h5>
+                        <p class="card-text text-muted">
+                            A remarkable planet where physics, chemistry, and
+                            biology combine to create life.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img
+                        src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                        class="card-img-top"
+                    />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">The Universe</h5>
+                        <p class="card-text text-muted">
+                            Galaxies, dark matter, and cosmic expansion reveal a
+                            universe far larger than imagined.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED VIDEO -->
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Featured Episode</h2>
+
+        <div class="ratio ratio-16x9 col-md-8 mx-auto">
+            <iframe
+                src="https://www.youtube.com/watch?v=IPHOrZkZFKs&t=572s"
+                title="Video"
+                allowfullscreen
+            ></iframe>
+        </div>
+
+        <p class="mt-3 text-light">
+            Discover how scientific insight reshaped humanity’s understanding of
+            the universe.
+        </p>
+    </div>
+</section>
+
+{% endblock main_content %}

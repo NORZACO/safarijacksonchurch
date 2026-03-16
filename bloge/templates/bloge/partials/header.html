@@ -1,0 +1,65 @@
+{% load static %}
+<!-- views/partials/header.ejs -->
+<header>
+  <!-- Top Header -->
+  <div class="bg-black text-white py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- Logo and Site Name -->
+      <div class="d-flex align-items-center">
+        <img src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}" alt="Logo" style="height: 40px; width: auto;">
+        <span class="ms-2 fw-semibold">
+          NORZACOAS TECH
+        </span>
+      </div>
+
+      <!-- Right Side: Language, Login, Search -->
+      <div class="d-flex align-items-center gap-3">
+        <a href="/" class="text-white text-decoration-none">
+          <i class="bi bi-translate me-1"></i> English
+        </a>
+
+          <a href="/teachings" class="text-white text-decoration-none">
+            <i class="bi bi-person-circle me-1"></i> Profile
+          </a>
+
+          <a href="/" class="text-white text-decoration-none">
+            <i class="bi bi-person-circle me-1"></i> Log In
+          </a>
+
+        <!-- Search Bar -->
+        <form class="d-flex" role="search">
+          <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light btn-sm ms-1" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Main Nav -->
+  <nav class="bg-dark text-white py-2">
+    <div class="container d-flex justify-content-start gap-4">
+      <a href="/" class="text-white text-decoration-none d-flex align-items-center">
+        <i class="bi bi-house-door me-1"></i> HOME
+      </a>
+      <a href="/teachings" class="text-white text-decoration-none d-flex align-items-center">
+        <i class="bi bi-journal-text me-1"></i> BLOG
+      </a>
+      <a href="/libraries" class="text-white text-decoration-none d-flex align-items-center">
+        <i class="bi bi-collection me-1"></i> LIBRARY
+      </a>
+            <a href="/donations" class="text-white text-decoration-none d-flex align-items-center">
+        <i class="bi bi-cash-coin me-1"></i> DONATIONS
+      </a>
+      <a href="/news" class="text-white text-decoration-none d-flex align-items-center">
+        <i class="bi bi-globe me-1"></i> NEWS
+      </a>
+      <a href="/about" class="text-white text-decoration-none d-flex align-items-center">
+        <i class="bi bi-people me-1"></i> ABOUT US
+      </a>
+    </div>
+  </nav>
+</header>

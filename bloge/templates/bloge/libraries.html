@@ -1,0 +1,160 @@
+{% extends 'bloge/partials/base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+<section class="container py-5">
+
+    <h2 class="text-center fw-bold mb-5">Photo - {{ albums.count }}</h2>
+
+    <div class="row g-4">
+
+        <!-- Image 1 -->
+        {% for libs in  albums.all %}
+        <div class="col-md-4 col-sm-6">
+            <div class="card shadow-sm h-100">
+                <img src="{{ libs.image.url }}"
+                     class="card-img-top"
+                     data-bs-toggle="modal"
+                     data-bs-target="#imageModal"
+                     onclick="showImage(this.src)">
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ libs.title }} </h5>
+                    <p class="card-text small text-muted">
+                       {{ libs.description| safe |truncatechars:20  }}
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center"> <div class="btn-group"> <button type="button" class="btn btn-sm btn-outline-secondary">View</button> <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> </div> <small class="text-body-secondary">9 mins</small> </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% comment "test me" %}
+        <!-- Image 1 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card shadow-sm h-100">
+                <img src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                     class="card-img-top"
+                     data-bs-toggle="modal"
+                     data-bs-target="#imageModal"
+                     onclick="showImage(this.src)">
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">Mountain Landscape</h5>
+                    <p class="card-text small text-muted">
+                        A peaceful view of mountains at sunrise. Moments like this remind us how vast and calm nature can be.
+                    </p>
+                </div>
+            </div>
+        </div>        <!-- Image 1 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card shadow-sm h-100">
+                <img src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                     class="card-img-top"
+                     data-bs-toggle="modal"
+                     data-bs-target="#imageModal"
+                     onclick="showImage(this.src)">
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">Mountain Landscape</h5>
+                    <p class="card-text small text-muted">
+                        A peaceful view of mountains at sunrise. Moments like this remind us how vast and calm nature can be.
+                    </p>
+                </div>
+            </div>
+        </div>        <!-- Image 1 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card shadow-sm h-100">
+                <img src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                     class="card-img-top"
+                     data-bs-toggle="modal"
+                     data-bs-target="#imageModal"
+                     onclick="showImage(this.src)">
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">Mountain Landscape</h5>
+                    <p class="card-text small text-muted">
+                        A peaceful view of mountains at sunrise. Moments like this remind us how vast and calm nature can be.
+                    </p>
+                </div>
+            </div>
+        </div>        <!-- Image 1 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card shadow-sm h-100">
+                <img src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                     class="card-img-top"
+                     data-bs-toggle="modal"
+                     data-bs-target="#imageModal"
+                     onclick="showImage(this.src)">
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">Mountain Landscape</h5>
+                    <p class="card-text small text-muted">
+                        A peaceful view of mountains at sunrise. Moments like this remind us how vast and calm nature can be.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Image 2 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card shadow-sm h-100">
+                <img src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                     class="card-img-top"
+                     data-bs-toggle="modal"
+                     data-bs-target="#imageModal"
+                     onclick="showImage(this.src)">
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">City Lights</h5>
+                    <p class="card-text small text-muted">
+                        The rhythm of a modern city at night. Light and movement shaping the story of urban life.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card shadow-sm h-100">
+                <img src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                     class="card-img-top"
+                     data-bs-toggle="modal"
+                     data-bs-target="#imageModal"
+                     onclick="showImage(this.src)">
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">Nature Path</h5>
+                    <p class="card-text small text-muted">
+                        A quiet path through the forest inviting exploration and reflection.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {% endcomment %}
+
+    </div>
+
+</section>
+
+
+<!-- Image viewer modal -->
+<div class="modal fade" id="imageModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark">
+      <div class="modal-body text-center p-0">
+        <img id="modalImage" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+function showImage(src){
+    document.getElementById("modalImage").src = src;
+}
+</script>
+
+{% endblock main_content %}

@@ -1,0 +1,31 @@
+<h2>{{ album.title }}</h2>
+
+<img src="{{ album.image.url }}" width="300" />
+
+<p>{{ album.description }}</p>
+
+<p>Likes: <span id="like-count">{{ album.total_likes }}</span></p>
+
+<button id="like-btn">❤️ Like</button>
+
+<script>
+    document.getElementById("like-btn").addEventListener("click", function () {
+        fetch("/like/{{ album.slug }}/", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": "{{ csrf_token }}",
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                document.getElementById("like-count").innerText =
+                    data.total_likes;
+
+                if (data.liked) {
+                    document.getElementById("like-btn").innerText = "💔 Unlike";
+                } else {
+                    document.getElementById("like-btn").innerText = "❤️ Like";
+                }
+            });
+    });
+</script>

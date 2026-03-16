@@ -1,0 +1,63 @@
+{% extends 'bloge/partials/base.html' %}
+
+
+{% load static %}
+
+{% block main_content %}
+
+<style>
+    .donation-wrapper {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(135deg, #98cadf, #203a43, #2c5364);
+        color: white;
+    }
+
+    .donation-box {
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        background: rgba(149, 197, 209, 0.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+    }
+
+    .donation-box:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    .donation-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .donation-text {
+        opacity: 0.85;
+        margin-bottom: 25px;
+    }
+</style>
+
+<section class="donation-wrapper">
+    <div class="donation-box">
+        <div class="donation-title">Support This Project</div>
+
+        <div class="donation-text">
+            Your contribution helps us continue creating knowledge and useful
+            tools.
+        </div>
+
+        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+        <stripe-buy-button
+            buy-button-id="buy_btn_1T9oJm2Xp15uOobrIsKIu24x"
+            publishable-key="pk_test_51Rdc0Y2Xp15uOobrwUx9rCXsa0r5o5BpjCF8IWxFXl6BQe4gDzxdcAv5tNCQ2aptDCoMsXKZGFjp2ur0yHMHrkYv00VwrlT3kU"
+        >
+        </stripe-buy-button>
+    </div>
+</section>
+
+{% endblock main_content %}

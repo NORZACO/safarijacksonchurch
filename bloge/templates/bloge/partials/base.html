@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head> {% include "bloge/partials/head.html" %} </head>
+<title>{% block title %}Home {% endblock %}</title>
+<body class="index-page">
+
+<header>  {% include "bloge/partials/header.html" %} </header>
+
+  <main class="main">
+
+    {% block main_content %}
+
+    {% endblock main_content %}
+
+  {% include "bloge/partials/footer.html" %}
+
+</body>
+</html>

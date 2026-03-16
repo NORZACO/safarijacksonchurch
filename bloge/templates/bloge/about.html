@@ -1,0 +1,101 @@
+{% extends 'bloge/partials/base.html' %}
+
+
+{% block title %}About Us{% endblock %}
+{% load static %}
+
+
+{% block main_content %}
+
+<!-- HERO -->
+<!-- CHURCH LEADER -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img
+                    src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                    class="img-fluid rounded shadow"
+                    alt="Church Leader"
+                />
+            </div>
+
+            <div class="col-md-8">
+                <h2 class="fw-bold mb-3">Church Leadership</h2>
+
+                <p>
+                    Our church is guided by dedicated leadership committed to
+                    teaching, spiritual growth, and caring for the congregation.
+                    With many years of service, our pastor and ministry team
+                    help guide the church’s mission of faith, compassion, and
+                    community outreach.
+                </p>
+
+                <p>
+                    Their work focuses on strengthening faith, supporting
+                    families, and encouraging members to grow spiritually while
+                    contributing positively to the community.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MEMBERS / COMMUNITY -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">Our Community</h2>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img
+                        src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                        class="card-img-top"
+                    />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Worship Together</h5>
+                        <p class="text-muted">
+                            Members gather regularly for worship, prayer, and
+                            spiritual encouragement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img
+                        src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                        class="card-img-top"
+                    />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Community Support</h5>
+                        <p class="text-muted">
+                            Our congregation actively supports one another and
+                            the surrounding community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img
+                        src="{% static 'bloge/images/501100095_univ_lsr_xl.jpg' %}"
+                        class="card-img-top"
+                    />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Learning Together</h5>
+                        <p class="text-muted">
+                            Bible studies and teachings help members deepen
+                            their understanding of faith.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock main_content %}
